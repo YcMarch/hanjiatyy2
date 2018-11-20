@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="gb2312">
+    <title>寒假体验营</title>
+    <meta name="keywords" content="寒假体验营" />
+    <meta name="description" content="寒假体验营" />
+    <link type="text/css" rel="stylesheet" href="css/css.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/area.js"></script>
+
+    <script>
+        function pgScale(){
+            var deviceWidth = document.documentElement.clientWidth;
+            if(deviceWidth > 720) deviceWidth = 720;
+            document.documentElement.style.fontSize = deviceWidth / 7.2 + 'px';
+        }
+        pgScale();
+        window.onresize=pgScale;
+    </script>
+   <!-- <script type="text/javascript">
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                window.location.href = 'http://www.kaoyan365.cn/zhuanti/1111/';
+            }
+            else{
+                window.location.href = 'http://www.kaoyan365.cn/zhuanti/1111/';
+            }
+        }
+        browserRedirect();
+    </script>-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b6e19087e97fa586f7e844d9b3a786bf";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- <script language="javascript" src="http://www.offcn.com/statics/js/bdtop.js"></script> -->
+</head>
+<body>
+
+<!--  header  begin -->
+<div class="header">
+    <a class="logo" href="http://www.kaoyan365.cn"><img src="images/logo.png" alt=""></a>
+    <a class="headTel" href="tel:400-6300-966">400-6300-966</a>
+</div>
+<!--  header  end  -->
+
+
+<!--  main  begin -->
+<main>
+
+    <!--banenr  begin -->
+    <div class="banner">
+        <p class="banTit1">20考研蓄势待发</p>
+        <p class="banTit2">中公考研  带你先人一步</p>
+    </div>
+    <!--banenr  end -->
+
+    <!-- xuehua  begin-->
+    <div class="xuehua">
+        <div class="xuehuaBG"></div>
+    </div>
+    <!-- xuehua  end  -->
+
+    <!--m1  begin -->
+    <div class="m1">
+        <div class="m1Box">
+            <h3 class="m1BTit"><em>预约报名入口</em></h3>
+            <div class="m1BForm">
+                <div class="m1BF1">
+                    <label class="m1BF1Label">姓名：</label>
+                    <div class="m1BF1Right"><input type="text" name="info[name1]" id="name1"></div>
+                </div>
+                <div class="m1BF1">
+                    <label class="m1BF1Label">电话：</label>
+                    <div class="m1BF1Right"><input type="text" name="info[tel]" id="tel"></div>
+                </div>
+                <div class="m1BF1">
+                    <label class="m1BF1Label">省份：</label>
+                    <div class="m1BF1Right">
+                        <select  name="info[province]" id="province"></select>
+                    </div>
+                </div>
+                <div class="m1BF1">
+                    <label class="m1BF1Label">地市：</label>
+                    <div class="m1BF1Right">
+                        <select  name="info[city]" id="city"></select>
+                    </div>
+                </div>
+                <input type="hidden" name="info[academy]" id="academy" value="院校">
+                <input type="hidden" name="info[zy]" id="zy" value="专业">
+                <input type="hidden" name="info[from]" id="from" value="寒假体验营wap端">
+                <input class="m1BF1Btn" type="button" id="dosubmit" value="提交">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">_init_area();</script>
+    <!--m1  end   -->
+    <script>
+        $('#dosubmit').click(function() {
+            var info = {};
+            info.name1 = $('#name1').val();
+            info.tel = $('#tel').val();
+            info.province = $('#province').val();
+            info.city = $('#city').val();
+            info.academy = $('#academy').val();
+            info.zy = $('#zy').val();
+            info.from = $('#from').val();
+            if(info.name1 == '') { //请填写姓名
+                alert('请填写姓名');
+                return false;
+            }
+            if(info.province == '') { //请填写省份
+                alert('请填写省份');
+                return false;
+            }else if(info.province == '请选择'){
+                alert('请填写省份');
+                return false;
+            }
+            if(info.city == '') { //请填写地市
+                alert('请填写地市');
+                return false;
+            }else if(info.city == '请选择'){
+                alert('请填写地市');
+                return false;
+            }
+            if(info.tel == '') { //验证手机号是否为空
+                alert('请填写手机号');
+                return false;
+            }
+            var reg = /^0?1[3456789]\d{9}$/; //手机号正则
+            if(!reg.test(info.tel)) { //验证手机号是否正确
+                alert('请填写正确的手机号！');
+                return false;
+            }
+            $.ajax({
+                url: "http://www.kaoyan365.cn/index.php?m=formguide&c=forms&a=show&formid=50&action=jsonp&siteid=1",
+                data: {info},
+                dataType: "jsonp",
+                type: "GET",
+                success: function(json) {
+                    if(json.status == 1) {
+                        alert('提交成功');
+                        $('#name1').val('');
+                        $('#tel').val('');
+                        $('#province').val('请选择');
+                        $('#city').val('请选择');
+
+                    }else if(json.status==-1){
+                        alert("请勿重复提交")
+                    }
+                }
+
+            })
+        });
+    </script>
+
+    <!--m2  begin -->
+    <div class="m2">
+        <h3 class="m2Tit">课程六大优势  助你顺利备战考研</h3>
+        <ul class="m2List">
+            <li>
+                <div class="m2Lleft">
+                    <div class="m2LlIco"><img src="images/m2ico1.png" alt=""></div>
+                    <p class="m2LlTit">择校择<br>专业指导</p>
+                </div>
+                <div class="m2Lright">
+                    <p>评估专业意向，检索院校研招信息，制定梯度报考计划</p>
+                </div>
+            </li>
+            <li>
+                <div class="m2Lleft">
+                    <div class="m2LlIco"><img src="images/m2ico2.png" alt=""></div>
+                    <p class="m2LlTit">全年复习<br>指导规划</p>
+                </div>
+                <div class="m2Lright">
+                    <p>纵观历年考情，阶段化分解目标，备考循序渐进</p>
+                </div>
+            </li>
+            <li>
+                <div class="m2Lleft">
+                    <div class="m2LlIco"><img src="images/m2ico3.png" alt=""></div>
+                    <p class="m2LlTit">全程配套<br>测试</p>
+                </div>
+                <div class="m2Lright">
+                    <p>测试、诊断、分析，三位一体，快速定位"症结所在"</p>
+                </div>
+            </li>
+            <li>
+                <div class="m2Lleft">
+                    <div class="m2LlIco"><img src="images/m2ico4.png" alt=""></div>
+                    <p class="m2LlTit">全职师资<br>督学</p>
+                </div>
+                <div class="m2Lright">
+                    <p>学习监督+状态管理，“教”“辅”一体，让懒惰无处遁形</p>
+                </div>
+            </li>
+            <li>
+                <div class="m2Lleft">
+                    <div class="m2LlIco"><img src="images/m2ico5.png" alt=""></div>
+                    <p class="m2LlTit">知识点<br>大串讲</p>
+                </div>
+                <div class="m2Lright">
+                    <p>梳理专业课核心考点，构建学科知识体系</p>
+                </div>
+            </li>
+            <li>
+                <div class="m2Lleft">
+                    <div class="m2LlIco"><img src="images/m2ico6.png" alt=""></div>
+                    <p class="m2LlTit">1v1答疑<br>解惑</p>
+                </div>
+                <div class="m2Lright">
+                    <p>及时答疑点拨，清扫考研“盲区”，实现高效辅导效果</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--m2  end   -->
+
+    <!--m3  begin -->
+    <div class="m3">
+        <h3 class="m2Tit">只有一次这么嗨  一大波福利送给你</h3>
+        <ul class="m3List">
+            <li>
+                <div class="m3LTop">
+                    <p class="m3LTNum">01</p>
+                    <div class="m3LTRight">满减优惠不停歇</div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="m3LBotm">
+                    <p>1、已是中公考研的会员报名即可享受49元优惠；</p>
+                    <p>2、两人团购减50元；三人团购减100元；以此类推，直至免费</p>
+                    <p style="color: #206dd2;">（以上两项优惠可叠加使用）</p>
+                </div>
+            </li>
+            <li>
+                <div class="m3LTop">
+                    <p class="m3LTNum">02</p>
+                    <div class="m3LTRight">打卡就给小礼品</div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="m3LBotm">
+                    <p>凡报名寒假体验营的学生，连续5天在朋友圈发布：这个寒假，我们不一样！并配图含有中公考研的logo产品等，即可获赠考研效率日志</p>
+                </div>
+            </li>
+            <li>
+                <div class="m3LTop">
+                    <p class="m3LTNum">03</p>
+                    <div class="m3LTRight">回家车票我报销</div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="m3LBotm">
+                    <p>春运高峰，中公考研为你返乡助力，高达300元车费补助等你来拿（结课后购买中公考研3000元以上产品可享）</p>
+                </div>
+            </li>
+            <li>
+                <div class="m3LTop">
+                    <p class="m3LTNum">04</p>
+                    <div class="m3LTRight">学费全额返</div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="m3LBotm">
+                    <p>评选在营内学习期间优异学员及进步最大的学员各一名，体验营费用全额返还</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--m3  end   -->
+
+    <!--m4  begin -->
+    <div class="m4">
+        <h3 class="m2Tit">三大课程亮点  丰富你的课余生活</h3>
+        <ul class="m4List">
+            <li>
+                <div class="m4LTop">专属你的PSM手册</div>
+                <div class="m4LBotm">
+                    <p>1、督学老师针对个人制定PSM学习成长手册</p>
+                    <p>2、具体到每个阶段、每月、每周的目标制定</p>
+                    <p>3、超详细复习规划</p>
+                </div>
+            </li>
+            <li>
+                <div class="m4LTop">听讲座，涨知识</div>
+                <div class="m4LBotm">
+                    <p>1.往年考研成功考生现场分享考研经验</p>
+                    <p>2.知名高校负责人亲临现场分享招收研究生的原则和经验</p>
+                    <p>3.择校择专业讲座</p>
+                </div>
+            </li>
+            <li>
+                <div class="m4LTop">趣味辩论赛</div>
+                <div class="m4LBotm">
+                    <p>1.开阔辩者思维，锻炼口头表达能力</p>
+                    <p>2.多方面考虑问题</p>
+                    <p>3.增加同学间友谊</p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <!--m4  end   -->
+
+    <!--m5  begin -->
+    <div class="m5">
+        <h3 class="m2Tit">紧凑学习行程  24小时高效学习</h3>
+        <div class="m5Con">
+            <table class="m5CTable">
+                <thead>
+                    <tr>
+                        <th>类型</th>
+                        <th>班型</th>
+                        <th>时间</th>
+                        <th>第一天</th>
+                        <th>第二天</th>
+                        <th>第三天</th>
+                        <th>第四天</th>
+                        <th>第五天</th>
+                        <th class="th9">第六天</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="6">专<br>业<br>课</td>
+                        <td rowspan="3">英语<br>
+                            +<br>
+                            专业课</td>
+                        <td>上午</td>
+                        <td>-</td>
+                        <td>英语</td>
+                        <td>专业课</td>
+                        <td>英语</td>
+                        <td>专业课</td>
+                        <td>离营测试</td>
+                    </tr>
+                    <tr>
+                        <td>下午</td>
+                        <td>报道</td>
+                        <td>英语</td>
+                        <td>专业课</td>
+                        <td>英语</td>
+                        <td>专业课</td>
+                        <td>闭营仪式</td>
+                    </tr>
+                    <tr>
+                        <td>晚上</td>
+                        <td>开营</td>
+                        <td>答疑</td>
+                        <td>班会活动</td>
+                        <td>择校择专<br>
+                            业指导</td>
+                        <td>答疑</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">数学<br>
+                            +<br>
+                            专业课</td>
+                        <td>上午</td>
+                        <td>-</td>
+                        <td>数学</td>
+                        <td>专业课</td>
+                        <td>数学</td>
+                        <td>专业课</td>
+                        <td>离营测试</td>
+                    </tr>
+                    <tr>
+                        <td>下午</td>
+                        <td>报道</td>
+                        <td>数学</td>
+                        <td>专业课</td>
+                        <td>数学</td>
+                        <td>专业课</td>
+                        <td>闭营仪式</td>
+                    </tr>
+                    <tr>
+                        <td>晚上</td>
+                        <td>开营</td>
+                        <td>答疑</td>
+                        <td>班会活动</td>
+                        <td>择校择专<br>
+                            业指导</td>
+                        <td>答疑</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="9">专<br>业<br>课</td>
+                        <td rowspan="3">英语<br>
+                            +<br>
+                            政治</td>
+                        <td>上午</td>
+                        <td>-</td>
+                        <td>英语</td>
+                        <td>英语</td>
+                        <td>政治</td>
+                        <td>英语</td>
+                        <td>离营测试</td>
+                    </tr>
+                    <tr>
+                        <td>下午</td>
+                        <td>报道</td>
+                        <td>英语</td>
+                        <td>英语</td>
+                        <td>政治</td>
+                        <td>英语</td>
+                        <td>闭营仪式</td>
+                    </tr>
+                    <tr>
+                        <td>晚上</td>
+                        <td>开营</td>
+                        <td>答疑</td>
+                        <td>班会活动</td>
+                        <td>择校择专<br>
+                            业指导</td>
+                        <td>答疑</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">英语<br>
+                            +<br>
+                            数学</td>
+                        <td>上午</td>
+                        <td>-</td>
+                        <td>英语</td>
+                        <td>数学</td>
+                        <td>英语</td>
+                        <td>数学</td>
+                        <td>离营测试</td>
+                    </tr>
+                    <tr>
+                        <td>下午</td>
+                        <td>报道</td>
+                        <td>英语</td>
+                        <td>数学</td>
+                        <td>英语</td>
+                        <td>数学</td>
+                        <td>闭营仪式</td>
+                    </tr>
+                    <tr>
+                        <td>晚上</td>
+                        <td>开营</td>
+                        <td>答疑</td>
+                        <td>班会活动</td>
+                        <td>择校择专<br>
+                            业指导</td>
+                        <td>答疑</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">英语<br>
+                            +<br>
+                            管综</td>
+                        <td>上午</td>
+                        <td>-</td>
+                        <td>英语</td>
+                        <td>英语</td>
+                        <td>初数</td>
+                        <td>逻辑</td>
+                        <td>离营测试</td>
+                    </tr>
+                    <tr>
+                        <td>下午</td>
+                        <td>报道</td>
+                        <td>英语</td>
+                        <td>英语</td>
+                        <td>初数</td>
+                        <td>逻辑</td>
+                        <td>闭营仪式</td>
+                    </tr>
+                    <tr>
+                        <td>晚上</td>
+                        <td>开营</td>
+                        <td>答疑</td>
+                        <td>班会活动</td>
+                        <td>择校择专<br>
+                            业指导</td>
+                        <td>答疑</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="m5ConBotm">
+            <p>专业课体验营覆盖专业：经济学、金融硕士、法律硕士（法学/非法学）、教育学、教育专硕、管理学、会计、艺术、新闻与传播<br>
+                * 具体课程时间、课程地点、课程内容以实际开课情况为准</p>
+        </div>
+
+
+    </div>
+    <!--m5  end  -->
+
+    <!--m6  begin -->
+    <div class="m6">
+        <h3 class="m2Tit">和研友一起奋斗  这个冬天不寒冷</h3>
+        <div class="m6Con">
+            <div class="m6CBox">
+                <div class="m6CBImg-1"><img src="images/m6img1.png" alt=""></div>
+                <div class="m6CBImg-2"><img src="images/m6img2.jpg" alt=""></div>
+                <div class="m6CBImg-3"><img src="images/m6img3.png" alt=""></div>
+                <div class="m6CBImg-4"><img src="images/m6img4.png" alt=""></div>
+                <div class="m6CBImg-5"><img src="images/m6img5.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <!--m6  end   -->
+
+
+
+
+</main>
+<!--  main  end   -->
+
+
+
+
+<!-- footer  begin -->
+<div class="footer">
+    <a class="footTel" href="tel:400-6300-966"><em>400-6300-966</em></a>
+    <a class="footZx" onClick="NTKF.im_openInPageChat('kf_10176_1522033629076')" href="javascript:;"><em>在线咨询</em></a>
+</div>
+<!-- footer  end   -->
+
+<!--<script language="javascript" src="http://www.offcn.com/statics/js/bdbot.js"></script>-->
+<!--<script type="text/javascript"> var NTKF_PARAM ={"siteid":"kf_10176" /*网站siteid*/,"settingid":"kf_10176_1522033629076" /*代码ID*/, "uid":"" /*会员ID*/,"uname":""/*会员名*/,"userlevel": "0"/*会员等级*/}</script>-->
+<!--<script>-->
+    <!--window.onload = function(){-->
+        <!--var mobile = /mobile|android|linux/i.test(navigator.userAgent.toLowerCase());-->
+        <!--if (!mobile) {-->
+            <!--NTKF.im_openInPageChat();-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+<!--<script type="text/javascript" src="http://dl.ntalker.com/js/xn6/ntkfstat.js?siteid=kf_10176" charset="utf-8"></script>-->
+</body>
+</html>
